@@ -70,7 +70,7 @@ class mobike{
     }
 }
 
-public class Assignment15_01_21 {
+public class classes {
 
     public static int add(int a,int b){
         return a+b;
