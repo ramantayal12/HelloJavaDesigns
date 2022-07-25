@@ -4,7 +4,6 @@ public class VehicleBuilderDesignPattern{
     private int price;
     private Boolean airbags;
 
-
     public int getPrice(){
         return this.price;
     }
