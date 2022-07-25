@@ -30,15 +30,21 @@ public class VehicleBuilderDesignPattern{
         private int price;
         private Boolean airbags;
 
+        public VehicleBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public VehicleBuilder setPrice(int price) {
+            this.price = price;
+            return this;
+        }
+
         public VehicleBuilder setAirbags(Boolean airbags) {
             this.airbags = airbags;
             return this;
         }
-
-        public VehicleBuilder(String name, int price) {
-            this.name = name;
-            this.price = price;
-        }
+        public VehicleBuilder() {}
 
         public VehicleBuilderDesignPattern build(){
             return new VehicleBuilderDesignPattern (this);
