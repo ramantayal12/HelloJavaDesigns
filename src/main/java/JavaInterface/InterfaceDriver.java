@@ -1,3 +1,5 @@
+package JavaInterface;
+
 /**
 
 Interfaces are used for :-
@@ -10,7 +12,7 @@ interface Printable {
     void print();
 }
 
-public class Interface implements Printable {
+public class InterfaceDriver implements Printable {
 
     @Override
     public void print() {
@@ -18,7 +20,7 @@ public class Interface implements Printable {
     }
 
     public static void main(String []args){
-        Interface obj = new Interface ();
+        InterfaceDriver obj = new InterfaceDriver();
         obj.print();
     }
 }

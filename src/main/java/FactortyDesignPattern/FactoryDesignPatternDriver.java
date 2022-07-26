@@ -1,20 +1,22 @@
-class Triangle implements Polygon{
+package FactortyDesignPattern;
+
+class Triangle implements Polygon {
 
     @Override
     public String getType() {
-        return "It is a Triangle";
+        return "It is a FactortyDesignPattern.Triangle";
     }
 }
 
-class Square implements Polygon{
+class Square implements Polygon {
 
     @Override
     public String getType() {
-        return "It is a Square";
+        return "It is a FactortyDesignPattern.Square";
     }
 }
 
-class Pentagon implements Polygon{
+class Pentagon implements Polygon {
 
     @Override
     public String getType() {
@@ -36,6 +38,6 @@ class PolygonFactory{
         return null;
     }
 }
-public class FactoryDesignPattern {
+public class FactoryDesignPatternDriver {
 
 }

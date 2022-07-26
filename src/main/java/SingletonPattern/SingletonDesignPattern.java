@@ -1,3 +1,5 @@
+package SingletonPattern;
+
 class SingletonEagerImplementation{
 
     public static SingletonEagerImplementation instance = new SingletonEagerImplementation ();

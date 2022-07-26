@@ -1,3 +1,5 @@
+package ClassesAndMethodOverLoading;
+
 import java.util.*;
 
 class Student {
@@ -32,7 +34,7 @@ class Bike {
     String name;
 
     void input(){
-        System.out.println("Enter Bike Number ");
+        System.out.println("Enter ClassesAndMethodOverLoading.Bike Number ");
         Scanner sc = new Scanner(System.in);
         bikeNumber = sc.nextInt();
         System.out.println("Enter Phone Number ");
@@ -43,7 +45,7 @@ class Bike {
     }
 
     void display(){
-        System.out.println("Bike Number "+ bikeNumber);
+        System.out.println("ClassesAndMethodOverLoading.Bike Number "+ bikeNumber);
         System.out.println("Phone Number "+phone);
         System.out.println("Name "+name);
         System.out.println("No. of days "+days);
@@ -62,7 +64,7 @@ class classes {
 
     public static void main(String []args ){
 
-        //1. WAP to create a class Student with 4 attributes, at least two methods
+        //1. WAP to create a class ClassesAndMethodOverLoading.Student with 4 attributes, at least two methods
         //input and display. Demonstrate with the help of two objects
 
         Student stud = new Student ();

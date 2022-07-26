@@ -1,3 +1,5 @@
+package MethodOverriding;
+
 class vehicle{
 
     void run(){
@@ -8,6 +10,9 @@ class vehicle{
 class car extends vehicle{
 
     int car_number;
+    void run(){
+        System.out.println("Car is Running");
+    }
 }
 class bike extends vehicle{
 

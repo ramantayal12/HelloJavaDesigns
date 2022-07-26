@@ -1,3 +1,5 @@
+package BuilderPattern;
+
 public class BuilderPatternDriver {
 
     public static void main(String[] args ){
@@ -6,7 +8,7 @@ public class BuilderPatternDriver {
             .VehicleBuilder()
             .setAirbags(true)
             .setPrice(200)
-            .setName("car")
+            .setName("MethodOverriding.car")
             .build();
     }
 }
