@@ -1,4 +1,4 @@
-package lombokBuilder;
+package learnLombokBuilder;
 
 public class PersonDriver {
 

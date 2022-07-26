@@ -1,4 +1,4 @@
-package lombokBuilder;
+package learnLombokBuilder;
 
 import java.util.List;
 import lombok.AccessLevel;
