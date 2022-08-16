@@ -1,14 +1,11 @@
 package Streams;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class StreamCreation {
 
-  public static void main(String args[]){
+  public static Stream CreateStreams(){
 
     // Method 1 of declaration
     // Empty Stream
@@ -29,18 +26,45 @@ public class StreamCreation {
     // Method 4 of declaration
     // Stream builder
     Stream<String> streamBuilder = Stream.<String>builder()
-        .add("a")
-        .add("b")
-        .add("c")
-        .build();
+            .add("d")
+            .add("b")
+            .add("c")
+            .add("a")
+            .build();
 
     // Method 5 of declaration
     Stream<String> streamGenerated =
-        Stream.generate(() -> "element").limit(10);
+            Stream.generate(() -> "element").limit(10);
 
     // Method 6 of declaration
     Stream<Integer> streamIterated = Stream.iterate(40, n -> n + 2).limit(20);
-    streamIterated.forEach(s -> System.out.println(s));
+    //streamIterated.forEach(s -> System.out.println(s));
+
+    return streamBuilder;
+
+  }
+
+  public static void ManipulatingStreams(){
+
+    Stream<String> stream =
+            Stream.of("a", "b", "c","bd").filter(element -> element.contains("b"));
+
+    Optional<String> anyElement = stream.findAny();
+    Optional<String> firstElement = stream.findFirst();
+    System.out.println (anyElement);
+    System.out.println (firstElement);
+
+  }
+
+  public static long StreamPipeline(Stream streamSample){
+
+    return streamSample.sorted ().count ();
+
+  }
+
+  public static void main(String args[]){
+
+    System.out.println (StreamPipeline (CreateStreams()));
 
   }
 
