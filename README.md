@@ -39,5 +39,9 @@ a. Use command on a terminal shell to figure out where is your Java 1.8 home dir
 b. If you just want to find out the home directory of your most recent version of Java, omit the version.
 > $ /usr/libexec/java_home
 
+## 3. Optional 
+
+1. Optional.of() vs Optional.ofNullable()
+Your question is based on assumption that the code which may throw NullPointerException is worse than the code which may not. This assumption is wrong. If you expect that your foobar is never null due to the program logic, it's much better to use Optional.of(foobar) as you will see a NullPointerException which will indicate that your program has a bug. If you use Optional.ofNullable(foobar) and the foobar happens to be null due to the bug, then your program will silently continue working incorrectly, which may be a bigger disaster. This way an error may occur much later and it would be much harder to understand at which point it went wrong.
 
 
