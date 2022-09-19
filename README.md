@@ -21,7 +21,7 @@ d. Link managed JDKs
 > $ jenv global 1.8
 
 2. Configure local version (per directory)
-> jenv local 1.8
+> $ jenv local 1.8
 
 3. Configure shell instance version
 > $ jenv shell 18
