@@ -54,7 +54,12 @@ Executor is an interface that represents an object that executes provided tasks.
 2. ExecutorService
 ExecutorService is a complete solution for asynchronous processing. It manages an in-memory queue and schedules submitted tasks based on thread availability.
 
+## 5. Generating and Adding New SSH Key
 
-
-
-
+1. Generate the SSH Key
+> $ ssh-keygen -t ed25519 -C "your_email@example.com" \
+or this \
+> $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" \
+2. Now Add the SSH key
+>eval "$(ssh-agent -s)" \
+3. $ ssh-add -K /Users/you/.ssh/id_rsa   
