@@ -62,19 +62,4 @@ class classes {
         return a+b+c;
     }
 
-    public static void main(String []args ){
-
-        //1. WAP to create a class ClassesAndMethodOverLoading.Student with 4 attributes, at least two methods
-        //input and display. Demonstrate with the help of two objects
-
-        Student stud = new Student ();
-        stud.get_data();
-        stud.display();
-
-
-        //2. Demonstrate Method overloading.
-        System.out.println(add(1,2));
-        System.out.println(add(1,2,3));
-
-    }
 }
