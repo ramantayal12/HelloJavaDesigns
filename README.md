@@ -1,5 +1,4 @@
-# Hello Java Designs
-check 
+# Hello Java Designs 
 
 ## 1. Install jenv 
 
@@ -14,8 +13,8 @@ b. verify install and paths change
 > $ echo 'eval "$(jenv init -)"' >> ~/.zshrc
 
 c. add Java environments 
-> $ jenv add /Users/raman.tayal/Library/Java/JavaVirtualMachines/corretto-1.8.0_342/Contents/Home
-> $ jenv rehash (if JAVA_HOME isn't set in jenv doctor)
+> $ jenv add /Users/raman.tayal/Library/Java/JavaVirtualMachines/corretto-1.8.0_342/Contents/Home \
+> $ jenv rehash (if JAVA_HOME isn't set in jenv doctor) \
 > $ exec $SHELL -l (if JAVA_HOME isn't set in jenv doctor)
 
 d. Link managed JDKs 
