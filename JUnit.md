@@ -71,3 +71,63 @@ static void done() {
     log.info("@AfterAll - executed after all test methods.");
 }
 ```
+
+# 4. Assertions and Assumptions
+
+## 4.1 Assertions 
+
+Method 1 :
+```
+@Test
+void lambdaExpressions() {
+    List numbers = Arrays.asList(1, 2, 3);
+    assertTrue(numbers.stream()
+      .mapToInt(Integer::intValue)
+      .sum() > 5, () -> "Sum should be greater than 5");
+}
+```
+
+Method 2: It's also now possible to group assertions with assertAll(), which will report any failed assertions within the group with a MultipleFailuresError:
+
+
+```
+@Test
+ void groupAssertions() {
+     int[] numbers = {0, 1, 2, 3, 4};
+     assertAll("numbers",
+         () -> assertEquals(numbers[0], 1),
+         () -> assertEquals(numbers[3], 3),
+         () -> assertEquals(numbers[4], 1)
+     );
+ }
+```
+
+# 4.2 Assumptions 
+
+Assumptions are used to run tests only if certain conditions are met. This is typically used for external conditions that are required for the test to run properly, but which aren't directly related to whatever is being tested.
+
+
+```
+@Test
+void trueAssumption() {
+    assumeTrue(5 > 1);
+    assertEquals(5 + 2, 7);
+}
+
+@Test
+void falseAssumption() {
+    assumeFalse(5 < 1);
+    assertEquals(5 + 2, 7);
+}
+
+@Test
+void assumptionThat() {
+    String someString = "Just a string";
+    assumingThat(
+        someString.equals("Just a string"),
+        () -> assertEquals(2 + 2, 4)
+    );
+}
+```
+
+
