@@ -4,17 +4,13 @@ import java.util.Optional;
 
 public class OptionalBasics {
 
-  public static void optionalDemo() {
+  public static void comparingTwoStringsUsingOptional(String s1, String s2 ){
 
-    String[] words = new String[10];
-    words[0] = "Raman";
+    Boolean doesMatch = Optional.ofNullable(s1)
+        .map(match -> match.equals(s2))
+        .orElse(false);
 
-    Optional<String> checkNull1 = Optional.ofNullable(words[0]);
-    System.out.println(checkNull1);
-
-    Optional<String> checkNull2 = Optional.ofNullable(words[1]);
-    System.out.println(checkNull2);
-
+    System.out.println(doesMatch);
   }
 
 }
