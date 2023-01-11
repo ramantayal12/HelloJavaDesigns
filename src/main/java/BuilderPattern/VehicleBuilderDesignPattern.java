@@ -2,9 +2,9 @@ package BuilderPattern;
 
 public class VehicleBuilderDesignPattern{
 
-    private String name;
-    private int price;
-    private Boolean airbags;
+    private final String name;
+    private final int price;
+    private final Boolean airbags;
 
     public int getPrice(){
         return this.price;

@@ -8,7 +8,7 @@ public class BuilderPatternDriver {
             .VehicleBuilder()
             .setAirbags(true)
             .setPrice(200)
-            .setName("MethodOverriding.car")
+            .setName("BuilderPattern.car")
             .build();
     }
 }
