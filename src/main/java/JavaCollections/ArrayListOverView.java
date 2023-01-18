@@ -1,13 +1,10 @@
 package JavaCollections;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import static java.util.stream.Collectors.toCollection;
 
 public class ArrayListOverView {
 
