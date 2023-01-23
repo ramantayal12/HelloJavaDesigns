@@ -33,6 +33,9 @@ public class IteratingOverEnum {
 
     Stream.of(DaysOfWeek.values())
         .forEach(dayOfWeek -> System.out.println(dayOfWeek.getDayOfWeek()));
+
+    System.out.println("Sample Test");
+    System.out.println(DaysOfWeek.valueOf("Monday"));
   }
 
 }
