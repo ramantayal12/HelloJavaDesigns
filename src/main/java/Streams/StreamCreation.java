@@ -1,8 +1,30 @@
 package Streams;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+class Car{
+  private String name;
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public long getKilometers() {
+    return kilometers;
+  }
+
+  public void setKilometers(long kilometers) {
+    this.kilometers = kilometers;
+  }
+
+  private long kilometers;
+}
 public class StreamCreation {
 
   public static Stream CreateStreams(){
@@ -56,16 +78,21 @@ public class StreamCreation {
 
   }
 
-  public static long StreamPipeline(Stream streamSample){
-
-    return streamSample.sorted ().count ();
-
-  }
-
-  public static void main(String args[]){
-
-    System.out.println (StreamPipeline (CreateStreams()));
-
+  public static List<Car> findCarsUsingLambda(List<Car> cars) {
+    /**
+     * Without Lambda
+     */
+    List<Car> selectedCars = new ArrayList<>();
+    for (Car car : cars) {
+      if (car.getKilometers() < 50000) {
+        selectedCars.add(car);
+      }
+    }
+    /**
+     * With lambda
+     */
+    return cars.stream().filter(car -> car.getKilometers() < 50000)
+        .collect(Collectors.toList());
   }
 
 }
