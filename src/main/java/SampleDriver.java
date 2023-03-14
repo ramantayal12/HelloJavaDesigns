@@ -1,12 +1,15 @@
-import static OptionalClass.OptionalBasics.comparingTwoStringsUsingOptional;
-import static OptionalClass.OptionalBasics.usingMethodsInsideClassUsingOptional;
+import java.util.stream.Collectors;
+import org.joda.time.DateTime;
 
 public class SampleDriver {
 
   public static void main(String[] args){
 
-    comparingTwoStringsUsingOptional("raman","tayal");
-    usingMethodsInsideClassUsingOptional("Raman");
+    System.out.println(DateTime.now().plusHours(1).toDateTime().getMillis());
+    System.out.println(DateTime.now().plusMinutes(3).toDateTime().getMillis());
+
+
+
   }
 
 }
