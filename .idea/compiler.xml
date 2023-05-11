@@ -10,8 +10,5 @@
         <module name="HelloJavaDesigns" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="HelloJavaDesigns" target="9" />
-    </bytecodeTargetLevel>
   </component>
 </project>

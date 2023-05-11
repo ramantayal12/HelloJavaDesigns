@@ -1,0 +1,5166 @@
+{
+  "success": true,
+  "template": {
+    "sectionMappings": [
+      {
+        "sectionType": "VEHICLE_SEARCH",
+        "title": {
+          "title": "Find Your Bike"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 0,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "FULL_SCREEN_SEARCH_FIELD",
+
+                  "fieldDataType": "VEHICLE",
+                  "title": "Which bike do you ride?",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "valueScope": "PREFERRED",
+                  "href": "v1/insurance/metadata/TWO_WHEELER",
+                  "hintText": "Search bike name or model",
+                  "errorData": {
+                    "title": "Sorry! We could not find this bike.",
+                    "subTitle": "Your search for %1$s did not return any result. Please check the spelling and try again.",
+                    "searchingMessage": "Looking for your bike...",
+                    "searchFailedMessage": "Unable to fetch the list of bikes."
+                  },
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            }
+          ],
+          "componentKitVersion": 3
+        },
+        "bottomButtonTitle": {}
+      },
+      {
+        "sectionType": "QUOTE_GENERATION_INPUT",
+        "title": {
+          "title": "Bike details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 1,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "FORM_WITH_BUTTON",
+
+                  "fieldDataType": "REGISTRATION_NUMBER",
+                  "title": "Bike number",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Enter a valid registration number.",
+                      "active": true,
+                      "regex": "^(?!DL)[A-Z]{2}[0-9]{2}[A-Z]{0,3}[0-9]{4}|DL[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+                    }
+                  ],
+                  "action": {
+                    "type": "MOVE_TO_INIT"
+                  },
+                  "seenEventEnabled": false,
+                  "buttonText": "Change",
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "SEARCH_FIELD",
+
+                  "fieldDataType": "VEHICLE",
+                  "title": "Which bike do you ride?",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "valueScope": "PREFERRED",
+                  "href": "v1/insurance/metadata/TWO_WHEELER",
+                  "hintText": "Search bike name or model",
+                  "errorData": {
+                    "title": "Sorry! We could not find this bike.",
+                    "subTitle": "Your search for %1$s did not return any result. Please check the spelling and try again.",
+                    "searchingMessage": "Looking for your bike...",
+                    "searchFailedMessage": "Unable to fetch the list of bikes."
+                  },
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "DROPDOWN",
+
+                  "fieldDataType": "REGISTRATION_YEAR",
+                  "title": "When was your bike registered?",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 2,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "SEARCH_FIELD",
+
+                  "fieldDataType": "REGISTRATION_PLACE",
+                  "title": "Which city do you live in?",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 4,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "valueScope": "PREFERRED",
+                  "href": "v1/insurance/metadata/CITY",
+                  "hintText": "Search for your city",
+                  "errorData": {
+                    "title": "Sorry, we could not find this city",
+                    "subTitle": "Your search for %1$s did not return any result. Please check the spelling and try again.",
+                    "searchingMessage": "Looking for your city...",
+                    "searchFailedMessage": "Unable to load the list of cities."
+                  },
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "defaultValue": [],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Has your previous policy expired more than 90 days before?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY_OD",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 10,
+                  "defaultValue": [],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Has your previous own damage policy expired more than 90 days before?",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_PRE_QUOTE_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButtonTitle": {
+          "title": "VIEW QUOTES"
+        }
+      },
+      {
+        "sectionType": "PRODUCT_SELECTION_V2",
+        "title": {
+          "title": "Select Plan"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 2,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "MODIFY_JOURNEY",
+                  "title": "Provided details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_TO_SECTION_AND_CLEAR_BACK_STACK",
+                    "checkExistingStack": false
+                  },
+                  "effects": [
+                    "DARK_BACKGROUND",
+                    "EMPHASISED"
+                  ],
+                  "seenEventEnabled": false,
+                  "buttonText": "Modify",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "STYLING_PROPERTY": {
+                  "type": "STYLING_PROPERTY",
+                  "backgroundColor": "PURPLE",
+                  "componentKitVersion": 29
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "MOTOR_PLAN_TYPE_V2",
+                  "title": "Select your plan",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Plan",
+                  "bottomButtonText": "UPDATE QUOTES",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "PLAN_DURATION_V2",
+                  "title": "Select your plan duration",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Duration",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {
+                "HORIZONTAL_STACKING": {
+                  "type": "HORIZONTAL_STACKING",
+                  "stackingStyle": "DIVIDE",
+                  "horizontalStackingAllowed": true,
+                  "componentKitVersion": 12
+                },
+                "STYLING_PROPERTY": {
+                  "type": "STYLING_PROPERTY",
+                  "backgroundColor": "PURPLE",
+                  "componentKitVersion": 29
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "TOGGLE_BUTTON",
+
+                  "fieldDataType": "PERSONAL_ACCIDENT_COVER_V2",
+                  "title": "Personal Accident Cover",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 1
+            },
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "STREAMING_DESCRIPTIVE_LIST",
+
+                  "fieldDataType": "STREAMING_PRODUCT_LIST",
+                  "title": "Products",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 28
+            },
+            {
+
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+
+                  "fieldDataType": "PRICE_LABEL",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "label": "<span><b><font color='#F7812F'>Note: </font></b>%s</span>",
+                  "componentKitVersion": 12
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "BOTTOM"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_PRODUCT_SELECTION_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButtonTitle": {}
+      },
+      {
+        "sectionType": "COMPREHENSIVE_PRODUCT_SELECTION",
+        "title": {
+          "title": "Comprehensive Plans"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 2,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "MOTOR_PLAN_TYPE_V2",
+                  "title": "Select your plan",
+                  "rules": [],
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Plan",
+                  "bottomButtonText": "UPDATE QUOTES",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "PLAN_DURATION_V2",
+                  "title": "Select your plan duration",
+                  "rules": [],
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Duration",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {
+                "HORIZONTAL_STACKING": {
+                  "type": "HORIZONTAL_STACKING",
+                  "stackingStyle": "DIVIDE",
+                  "horizontalStackingAllowed": true,
+                  "componentKitVersion": 12
+                },
+                "STYLING_PROPERTY": {
+                  "type": "STYLING_PROPERTY",
+                  "backgroundColor": "PURPLE",
+                  "componentKitVersion": 29
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "TOGGLE_BUTTON",
+
+                  "fieldDataType": "PERSONAL_ACCIDENT_COVER_V2",
+                  "title": "Personal Accident Cover",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 1
+            },
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "STREAMING_DESCRIPTIVE_LIST",
+
+                  "fieldDataType": "STREAMING_PRODUCT_LIST",
+                  "title": "Products",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 28
+            },
+            {
+
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+
+                  "fieldDataType": "PRICE_LABEL",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "label": "<span><b><font color='#F7812F'>Note: </font></b>%s</span>",
+                  "componentKitVersion": 12
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "BOTTOM"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_PRODUCT_SELECTION_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButtonTitle": {}
+      },
+      {
+        "sectionType": "THIRD_PARTY_PRODUCT_SELECTION",
+        "title": {
+          "title": "Third Party Plans"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 2,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "MOTOR_PLAN_TYPE_V2",
+                  "title": "Select your plan",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Plan",
+                  "bottomButtonText": "UPDATE QUOTES",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL_V2",
+
+                  "fieldDataType": "PLAN_DURATION_V2",
+                  "title": "Select your plan duration",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "effects": [
+                    "FULL_SCREEN"
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Duration",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {
+                "HORIZONTAL_STACKING": {
+                  "type": "HORIZONTAL_STACKING",
+                  "stackingStyle": "DIVIDE",
+                  "horizontalStackingAllowed": true,
+                  "componentKitVersion": 12
+                },
+                "STYLING_PROPERTY": {
+                  "type": "STYLING_PROPERTY",
+                  "backgroundColor": "PURPLE",
+                  "componentKitVersion": 29
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "TOGGLE_BUTTON",
+
+                  "fieldDataType": "PERSONAL_ACCIDENT_COVER_V2",
+                  "title": "Personal Accident Cover",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 1
+            },
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "STREAMING_DESCRIPTIVE_LIST",
+
+                  "fieldDataType": "STREAMING_PRODUCT_LIST",
+                  "title": "Products",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 28
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 28
+            },
+            {
+
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+
+                  "fieldDataType": "PRICE_LABEL",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "label": "<span><b><font color='#F7812F'>Note: </font></b>%s</span>",
+                  "componentKitVersion": 12
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "BOTTOM"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_PRODUCT_SELECTION_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButtonTitle": {}
+      },
+      {
+        "sectionType": "PRODUCT_SELECTION",
+        "title": {
+          "title": "Select Plan"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 2,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "MODIFY_JOURNEY",
+                  "title": "Provided details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_TO_SECTION_AND_CLEAR_BACK_STACK",
+                    "checkExistingStack": false
+                  },
+                  "seenEventEnabled": false,
+                  "buttonText": "Modify",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 25
+            },
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "ICON_DROPDOWN",
+
+                  "fieldDataType": "SORT",
+                  "title": "Sort By",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EVENT_EQUALS",
+                        "eventType": "LOADED",
+                        "componentKitVersion": 17
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "editable": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 17
+                    },
+                    {
+                      "expression": {
+                        "type": "EVENT_EQUALS",
+                        "eventType": "START_LOADING",
+                        "componentKitVersion": 17
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "editable": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 17
+                    }
+                  ],
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "toolTipInfo": {
+                    "timer": 5.0,
+                    "text": "You can sort the quotes now.",
+                    "direction": "bottom"
+                  },
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "iconLink": "SORT_ICON",
+                  "componentKitVersion": 17
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL",
+
+                  "fieldDataType": "MOTOR_PLAN_TYPE",
+                  "title": "Select your plan",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Plan",
+                  "bottomButtonText": "UPDATE QUOTES",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL",
+
+                  "fieldDataType": "PLAN_DURATION",
+                  "title": "Select your plan duration",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "label": "Duration",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "SELECTION_WIDGET_WITH_LABEL",
+
+                  "fieldDataType": "TWO_WHEELER_IDV",
+                  "editable": false,
+                  "optional": false,
+                  "visible": false,
+                  "active": true,
+                  "order": 3,
+                  "defaultValue": {
+                    "displayCodeName": "Minimum",
+                    "code": "MIN",
+                    "order": 0,
+                    "description": "IDV has been set at minimum to get affordable plans for you.",
+                    "tags": []
+                  },
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Minimum",
+                      "code": "MIN",
+                      "order": 0,
+                      "description": "IDV has been set at minimum to get affordable plans for you.",
+                      "tags": []
+                    }
+                  ],
+                  "label": "Insured Value (IDV)",
+                  "orientation": "VERTICAL",
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {
+                "HORIZONTAL_STACKING": {
+                  "type": "HORIZONTAL_STACKING",
+                  "stackingStyle": "SCROLL",
+                  "horizontalStackingAllowed": true,
+                  "componentKitVersion": 12
+                }
+              },
+              "componentKitVersion": 17
+            },
+            {
+
+              "title": {},
+              "dividerType": "LINE",
+              "fields": [
+                {
+                  "type": "LABEL",
+
+                  "fieldDataType": "PRICE_LABEL",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 2
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 2
+            },
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "JSON",
+
+                  "fieldDataType": "PRODUCTS_LIST",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "errorCode": "NO_PLAN_SELECTED",
+                      "message": "Please select at least one plan.",
+                      "active": true,
+                      "regex": "^(?!\\s*$).+"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "validJsonField": true,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 1
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "SELECT PLAN"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "OWNER_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 4,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "PROGRESS_TIMELINE",
+
+                  "fieldDataType": "POLICY_DETAILS_PROGRESS_TIMELINE",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 29
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "TOP"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {
+                "title": "Owner details"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "USER_NAME",
+                  "title": "Name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name.",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Your name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Name should be same as your RC book",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "USER_MOBILE",
+                  "title": "Mobile number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "maxLength": 10,
+                      "minLength": 10
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "USER_EMAIL",
+                  "title": "Email address",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid email address.",
+                      "active": true,
+                      "regex": "[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z]+([-.][A-Za-z]+)*\\.[A-Za-z]{2,}([-.][A-Za-z]+)*"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Policy certificate will be shared to this email",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "EXTENDED_FORM",
+
+                  "fieldDataType": "MOTOR_USER_ADDRESS_V2",
+                  "title": "Residential address",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter residential address",
+                  "componentKitVersion": 24
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_USER_PINCODE",
+                  "title": "Pincode",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Pincode is invalid",
+                      "active": true,
+                      "regex": "^[1-9]{1}[0-9]{5}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Your current address pincode",
+                  "inputType": "NUMBER",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 24
+            },
+            {
+
+              "title": {
+                "title": "Customer KYC Details section",
+                "subTitle": "Please provide us with below Identification Documents details so that we can issue you the Insurance policy (Mandated by IRDAI)."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_PAN_CARD_NUMBER",
+                  "title": "PAN Card",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please Enter Valid Pan Card Details",
+                      "active": true,
+                      "regex": "[A-Z]{5}[0-9]{4}[A-Z]{1}]{0,}$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_DRIVING_LICENSE_NUMBER",
+                  "title": "Driving License Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_VOTER_CARD_NUMBER",
+                  "title": "Voter Card Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_PASSPORT_NUMBER",
+                  "title": "Passport Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_AADHAR_NUMBER",
+                  "title": "Aadhar Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last four digits",
+                  "inputType": "NUMBER",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_CKYC_NUMBER",
+                  "title": "CKYC Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+
+                  "fieldDataType": "MOTOR_AADHAR_BASED_NAME",
+                  "title": "Owner Name (as in aadhar Card)",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "GENDER",
+                  "title": "Gender",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "MOTOR_DATE_OF_BIRTH",
+                  "title": "Date of birth",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "DATE",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "VEHICLE_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 5,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "PROGRESS_TIMELINE",
+                  "fieldDataType": "POLICY_DETAILS_PROGRESS_TIMELINE",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 29
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "TOP"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+              "title": {
+                "title": "Bike details",
+                "subTitle": "You can find these details on your bike's RC and on your current policy document."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+                  "fieldDataType": "VEHICLE_DETAILS",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 12
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 12
+            },
+            {
+              "title": {},
+              "dividerType": "MARGINAL_LINE",
+              "fields": [
+                {
+                  "type": "FORM",
+                  "fieldDataType": "PROPOSAL_FORM_REGISTRATION_NUMBER",
+                  "title": "Bike number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid registration number.",
+                      "active": false,
+                      "maxLength": 11,
+                      "minLength": 4
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Enter a valid registration number.",
+                      "active": true,
+                      "regex": "^(?!DL)[A-Z]{2}[0-9]{2}[A-Z]{0,3}[0-9]{4}|DL[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "REGISTRATION_DATE",
+                  "title": "Registration Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "DATE",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "defaultTimeInChangeView": 1649242215980,
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "CHASSIS_NUMBER",
+                  "title": "Chassis Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your chassis number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The chassis number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Chassis Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ENGINE_NUMBER",
+                  "title": "Engine Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your engine number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The engine number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Engine Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "RICH_CHECKBOX_WITH_MULTI_LINK",
+                  "fieldDataType": "VEHICLE_LOAN_CHECKBOX",
+                  "title": "I have a bike loan",
+                  "editable": true,
+                  "optional": true,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "intents": [],
+                  "alignment": "RIGHT",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "BANK_NAME",
+                  "title": "Bank Name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 8
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "PREVIOUS_POLICY_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 5,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "PROGRESS_TIMELINE",
+                  "fieldDataType": "POLICY_DETAILS_PROGRESS_TIMELINE",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 29
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "TOP"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+              "title": {
+                "title": "Previous Policy Details",
+                "subTitle": "You can find these details in your previous policy document"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "TOGGLE_BUTTON",
+                  "fieldDataType": "DONT_REMEMBER_PYP_TOGGLE_BUTTON",
+                  "title": "I don't remember previous policy details",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "defaultValue": [],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Has your previous policy expired more than 90 days before?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY_DATE",
+                  "title": "Policy Expiry Date",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "valueType": "DATE",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "PREVIOUS_INSURER_NAME",
+                  "title": "Previous Insurer Name",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "PREVIOUS_POLICY_NUMBER",
+                  "title": "Previous Policy Number",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter the correct policy number.",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_PLAN_TYPE",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 6,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "description": "What is your previous policy type?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_CLAIM_MADE",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 7,
+                  "defaultValue": [
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Have you claimed in the last policy period?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NCB",
+                  "title": "Previous No Claim Bonus (NCB)",
+                  "rules": [
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": true,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": false,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    },
+                    {
+                      "expression": {
+                        "type": "EQUALS",
+                        "value": false,
+                        "componentKitVersion": 1
+                      },
+                      "result": {
+                        "type": "OFFLINE",
+                        "visible": true,
+                        "componentKitVersion": 1
+                      },
+                      "priority": 0,
+                      "componentKitVersion": 1
+                    }
+                  ],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 8,
+                  "valueType": "STRING",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "description": "NCB is the insurer's way of rewarding you for being a good driver. This means that if you have not made any claims using your existing policy, you are eligible for a No Claim Bonus.",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {
+                "title": "Active TP policy details",
+                "subTitle": "We just need to make sure you have an active Third Party only policy valid for at least a year so we can go ahead and issue you the Own Damage only policy as per your need."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "ACTIVE_TP_INSURER_NAME",
+                  "title": "Active TP Insurer Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_START_DATE",
+                  "title": "Active TP Policy Start Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_END_DATE",
+                  "title": "Active TP Policy End Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_END",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ACTIVE_TP_POLICY_NUMBER",
+                  "title": "Active TP Policy Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "PA_NOMINEE_DETAILS",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 6,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "PROGRESS_TIMELINE",
+                  "fieldDataType": "POLICY_DETAILS_PROGRESS_TIMELINE",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 29
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "TOP"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+              "title": {
+                "title": "Nominee Details",
+                "subTitle": "Enter Nominee details for your Personal accident cover"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NOMINEE_RELATION_MOTOR",
+                  "title": "Nominee relation",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_NAME_MOTOR",
+                  "title": "Nominee Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_AGE",
+                  "title": "Nominee Age",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should contain only numbers.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should be in range 18-99",
+                      "active": true,
+                      "regex": "^(1[89]|[2-9][0-9])$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Please Enter Nominee Age in Completed Years",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "EDIT_OWNER_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 4,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {
+                "title": "Owner details"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_NAME",
+                  "title": "Name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name.",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Your name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Name should be same as your RC book",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_MOBILE",
+                  "title": "Mobile number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "maxLength": 10,
+                      "minLength": 10
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_EMAIL",
+                  "title": "Email address",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid email address.",
+                      "active": true,
+                      "regex": "[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z]+([-.][A-Za-z]+)*\\.[A-Za-z]{2,}([-.][A-Za-z]+)*"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Policy certificate will be shared to this email",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "EXTENDED_FORM",
+                  "fieldDataType": "MOTOR_USER_ADDRESS_V2",
+                  "title": "Residential address",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter residential address",
+                  "componentKitVersion": 24
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_USER_PINCODE",
+                  "title": "Pincode",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Pincode is invalid",
+                      "active": true,
+                      "regex": "^[1-9]{1}[0-9]{5}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Your current address pincode",
+                  "inputType": "NUMBER",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 24
+            },
+            {
+              "title": {
+                "title": "Customer KYC Details section",
+                "subTitle": "Please provide us with below Identification Documents details so that we can issue you the Insurance policy (Mandated by IRDAI)."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_PAN_CARD_NUMBER",
+                  "title": "PAN Card",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please Enter Valid Pan Card Details",
+                      "active": true,
+                      "regex": "[A-Z]{5}[0-9]{4}[A-Z]{1}]{0,}$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_DRIVING_LICENSE_NUMBER",
+                  "title": "Driving License Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_VOTER_CARD_NUMBER",
+                  "title": "Voter Card Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_PASSPORT_NUMBER",
+                  "title": "Passport Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "CAPS",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_AADHAR_NUMBER",
+                  "title": "Aadhar Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "inputType": "NUMBER",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_CKYC_NUMBER",
+                  "title": "CKYC Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_AADHAR_BASED_NAME",
+                  "title": "Owner Name (as in aadhar Card)",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "GENDER",
+                  "title": "Gender",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "STRING",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "MOTOR_DATE_OF_BIRTH",
+                  "title": "Date of birth",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "valueType": "DATE",
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "EDIT_PA_NOMINEE_DETAILS",
+        "title": {
+          "title": "Edit Nominee Details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 6,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {
+                "title": "Nominee Details",
+                "subTitle": "Enter Nominee details for your Personal accident cover"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NOMINEE_RELATION_MOTOR",
+                  "title": "Nominee relation",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_NAME_MOTOR",
+                  "title": "Nominee Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_AGE",
+                  "title": "Nominee Age",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should contain only numbers.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should be in range 18-99",
+                      "active": true,
+                      "regex": "^(1[89]|[2-9][0-9])$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Please Enter Nominee Age in Completed Years",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "EDIT_VEHICLE_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 5,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {
+                "title": "Bike details",
+                "subTitle": "You can find these details on your bike's RC and on your current policy document."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+                  "fieldDataType": "VEHICLE_DETAILS",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 12
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 12
+            },
+            {
+              "title": {},
+              "dividerType": "MARGINAL_LINE",
+              "fields": [
+                {
+                  "type": "DATE",
+                  "fieldDataType": "REGISTRATION_DATE",
+                  "title": "Registration Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "defaultTimeInChangeView": 1649242215980,
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "CHASSIS_NUMBER",
+                  "title": "Chassis Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your chassis number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The chassis number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Chassis Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ENGINE_NUMBER",
+                  "title": "Engine Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your engine number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The engine number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Engine Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "RICH_CHECKBOX_WITH_MULTI_LINK",
+                  "fieldDataType": "VEHICLE_LOAN_CHECKBOX",
+                  "title": "I have a bike loan",
+                  "editable": true,
+                  "optional": true,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "intents": [],
+                  "alignment": "RIGHT",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "BANK_NAME",
+                  "title": "Bank Name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 8
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "EDIT_PREVIOUS_POLICY_DETAILS_V2",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 5,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {
+                "title": "Previous Policy Details",
+                "subTitle": "You can find these details in your previous policy document"
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "DATE",
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY_DATE",
+                  "title": "Policy Expiry Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "PREVIOUS_INSURER_NAME",
+                  "title": "Previous Insurer Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 2,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "PREVIOUS_POLICY_NUMBER",
+                  "title": "Previous Policy Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_CLAIM_MADE",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "defaultValue": [
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Have you claimed in the last policy period?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NCB",
+                  "title": "Previous No Claim Bonus (NCB)",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 7,
+                  "valueType": "STRING",
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "description": "NCB is the insurer's way of rewarding you for being a good driver. This means that if you have not made any claims using your existing policy, you are eligible for a No Claim Bonus.",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {
+                "title": "Active TP policy details",
+                "subTitle": "We just need to make sure you have an active Third Party only policy valid for at least a year so we can go ahead and issue you the Own Damage only policy as per your need."
+              },
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "ACTIVE_TP_INSURER_NAME",
+                  "title": "Active TP Insurer Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_START_DATE",
+                  "title": "Active TP Policy Start Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_END_DATE",
+                  "title": "Active TP Policy End Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_END",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ACTIVE_TP_POLICY_NUMBER",
+                  "title": "Active TP Policy Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "CONTINUE"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "POLICY_DETAILS_INPUT",
+        "title": {
+          "title": "Provide details"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": false,
+        "order": 3,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {
+                "title": "Owner details"
+              },
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_NAME",
+                  "title": "Name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Your name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Name should be same as in RC book",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_MOBILE",
+                  "title": "Mobile number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter a valid 10 digit mobile number.",
+                      "active": true,
+                      "maxLength": 10,
+                      "minLength": 10
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "USER_EMAIL",
+                  "title": "Email address",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Please enter a valid email address.",
+                      "active": true,
+                      "regex": "[A-Za-z0-9_]+([-+.'][A-Za-z0-9_]+)*@[A-Za-z]+([-.][A-Za-z]+)*\\.[A-Za-z]{2,}([-.][A-Za-z]+)*"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "We will send your policy document to this email ID.",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "EXTENDED_FORM",
+                  "fieldDataType": "MOTOR_USER_ADDRESS_V2",
+                  "title": "Residential address",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "EMPTY",
+                      "message": "This field is mandatory",
+                      "active": true
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter residential address",
+                  "componentKitVersion": 24
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "MOTOR_USER_PINCODE",
+                  "title": "Pincode",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Pincode is invalid",
+                      "active": true,
+                      "regex": "^[1-9]{1}[0-9]{5}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Your current address pincode",
+                  "inputType": "NUMBER",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 24
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "ITEM_SELECTION_FIELD",
+                  "fieldDataType": "PERSONAL_ACCIDENT_COVER",
+                  "title": "Personal Accident Cover",
+                  "editable": true,
+                  "optional": true,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "description": "Cover of 15 lakhs is mandated by law. Skip this if you already have an active cover or if your driving license is invalid.",
+                  "itemSelectionData": {
+                    "selectionType": "MULTI",
+                    "itemList": [
+                      {
+                        "code": "ITEM_1",
+                        "imageLink": "ins_emergency_cash_benefit",
+                        "selectionText": "250",
+                        "title": {
+                          "title": "1 Year Cover"
+                        }
+                      }
+                    ],
+                    "selectionClearNote": "Changed Your Mind?",
+                    "selectionClearButtonText": "Clear Selection"
+                  },
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NOMINEE_RELATION_MOTOR",
+                  "title": "Nominee",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 5,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "hintText": "Select Nominee Type",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_NAME_MOTOR",
+                  "title": "Nominee Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 6,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid name",
+                      "active": true,
+                      "maxLength": 50,
+                      "minLength": 3
+                    },
+                    {
+                      "type": "REGEX",
+
+                      "message": "Nominee name cannot have special characters.",
+                      "active": true,
+                      "regex": "^[A-Za-z]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "NOMINEE_AGE",
+                  "title": "Nominee Age",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 7,
+                  "validations": [
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should contain only numbers.",
+                      "active": true,
+                      "regex": "^[0-9]*$"
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Nominee age should be in range 18-99",
+                      "active": true,
+                      "regex": "^(1[89]|[2-9][0-9])$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Please Enter Nominee Age in Completed Years",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {
+                "title": "Bike details",
+                "subTitle": "You can find these details on your bike's RC and on your current policy document."
+              },
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "FORM",
+                  "fieldDataType": "PROPOSAL_FORM_REGISTRATION_NUMBER",
+                  "title": "Bike number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Enter a valid registration number.",
+                      "active": false,
+                      "maxLength": 11,
+                      "minLength": 4
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "Enter a valid registration number.",
+                      "active": true,
+                      "regex": "^(?!DL)[A-Z]{2}[0-9]{2}[A-Z]{0,3}[0-9]{4}|DL[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "REGISTRATION_DATE",
+                  "title": "Registration date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "toolTipInfo": {
+                    "actionText": "Stored in DB",
+                    "direction": "top"
+                  },
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "defaultTimeInChangeView": 1651041542536,
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ENGINE_NUMBER",
+                  "title": "Engine number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your engine number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The engine number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Engine Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "CHASSIS_NUMBER",
+                  "title": "Chassis number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "message": "Please enter only the last 5 digits of your chassis number.",
+                      "active": true,
+                      "maxLength": 5,
+                      "minLength": 5
+                    },
+                    {
+                      "type": "REGEX",
+                      "message": "The chassis number cannot have special characters.",
+                      "active": true,
+                      "regex": "^[a-zA-Z0-9_]*$"
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "hintText": "Enter last 5 digits of Chassis Number",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "VEHICLE_LOAN_MULTI_BUTTON_V2",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "defaultValue": [
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "You can select only one.",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "I have a bike loan",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "BANK_NAME_FOR_VEHICLE_LOAN_V2",
+                  "title": "Financier name",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 8
+            },
+            {
+              "title": {
+                "title": "Previous Policy Details",
+                "subTitle": "You can find these details in your previous policy document"
+              },
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "defaultValue": [],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 Option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Has your previous policy expired more than 90 days before?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "PREVIOUS_POLICY_EXPIRY_DATE",
+                  "title": "Policy expiry date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_END",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "PREVIOUS_INSURER_NAME",
+                  "title": "Previous Insurer Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 2,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "PREVIOUS_POLICY_NUMBER",
+                  "title": "Previous Policy Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_PLAN_TYPE",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 4,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "Can not select more than 1 option",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "description": "What is your previous policy type?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "MULTI_BUTTON_V2",
+                  "fieldDataType": "PREVIOUS_POLICY_CLAIM_MADE",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 5,
+                  "defaultValue": [
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "errorCode": "SELECTION_LIMIT_EXCEEDED",
+                      "message": "You can select only one product.",
+                      "active": true,
+                      "maxLength": 1,
+                      "minLength": 1
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    },
+                    {
+                      "displayCodeName": "No",
+                      "code": "false",
+                      "order": 1
+                    }
+                  ],
+                  "description": "Have you made a claim in last policy period?",
+                  "componentKitVersion": 8
+                },
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "NCB",
+                  "title": "Previous No Claim Bonus (NCB)",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 6,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "description": "NCB is the insurer's way of rewarding you for being a good driver. This means that if you have not made any claims in your existing policy, you are eligible for a No Claim Bonus.",
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 8
+            },
+            {
+              "title": {
+                "title": "Active TP policy details",
+                "subTitle": "We just need to make sure you have an active Third Party only policy valid for at least a year so we can go ahead and issue you the Own Damage only policy as per your need."
+              },
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "DROPDOWN",
+                  "fieldDataType": "ACTIVE_TP_INSURER_NAME",
+                  "title": "Active TP Insurer Name",
+                  "rules": [],
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "valueScope": "ALL",
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_START_DATE",
+                  "title": "Active TP Policy Start Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_START",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "DATE",
+                  "fieldDataType": "ACTIVE_TP_END_DATE",
+                  "title": "Active TP Policy End Date",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 2,
+                  "valueType": "DATE",
+                  "seenEventEnabled": false,
+                  "hintText": "",
+                  "dayTime": "DAY_END",
+                  "validDateField": true,
+                  "componentKitVersion": 1
+                },
+                {
+                  "type": "FORM",
+                  "fieldDataType": "ACTIVE_TP_POLICY_NUMBER",
+                  "title": "Active TP Policy Number",
+                  "editable": true,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "validations": [
+                    {
+                      "type": "LENGTH",
+                      "active": false,
+                      "maxLength": 50,
+                      "minLength": 3
+                    }
+                  ],
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 1
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 1
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_INSURANCE_2W_ABT_ICON_POLICY_DETAILS",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "BLOCK",
+          "title": {
+            "title": "Continue"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "MOTOR_INSURANCE_REVIEW_AND_BUY",
+        "title": {
+          "title": "Review and buy"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": true,
+        "order": 7,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+          "fieldGroups": [
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "TEMPLATIZED_JSON_FIELD",
+                  "fieldDataType": "REVIEW_AND_BUY_POLICY_DETAILS",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "TEMPLATIZED_JSON_FIELD",
+                  "fieldDataType": "REVIEW_AND_BUY_PLAN_DETAILS",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "TEMPLATIZED_JSON_FIELD",
+                  "fieldDataType": "REVIEW_AND_BUY_ADDONS_DETAILS",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "TEMPLATIZED_JSON_FIELD",
+                  "fieldDataType": "REVIEW_AND_BUY_VEHICLE_DETAILS",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "TEMPLATIZED_JSON_FIELD",
+                  "fieldDataType": "REVIEW_AND_BUY_PREVIOUS_POLICY_DETAILS",
+                  "title": "",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "JSON",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+              "title": {},
+              "dividerType": "CARD",
+              "fields": [
+                {
+                  "type": "LABEL",
+                  "fieldDataType": "OWN_DAMAGE_WARNING_LABEL",
+                  "editable": false,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "label": "If you already have a valid Third Party only policy active for another year, we suggest you go back and select Own Damage only plans.",
+                  "componentKitVersion": 2
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 2
+            },
+            {
+              "title": {},
+              "dividerType": "BOTTOM",
+              "fields": [
+                {
+                  "type": "INSURANCE_PRICE_DETAILS",
+                  "fieldDataType": "REVIEW_AND_BUY_PRICE_DETAILS",
+                  "title": "Total Premium",
+                  "editable": false,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "RICH_CHECKBOX",
+                  "fieldDataType": "MOTOR_TERMS_AND_CONDITION",
+                  "title": "I agree to the {{terms & conditions}}, have given correct details and have a valid PUC certificate",
+                  "editable": false,
+                  "visible": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "href": "https://www.phonepe.com/app/category/insurance/motor/bagic/tnc.html",
+                  "valueScope": "ALL",
+                  "values": [
+                    {
+                      "displayCodeName": "Yes",
+                      "code": "true",
+                      "order": 0
+                    }
+                  ],
+                  "validStoredCheckboxField": true,
+                  "componentKitVersion": 3
+                },
+                {
+                  "type": "RICH_CHECKBOX_WITH_MULTI_LINK",
+                  "fieldDataType": "MOTOR_TNC",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "intents": [
+                    {
+                      "type": "WEB_URL",
+                      "identifier": "terms_and_conditions",
+                      "displayString": "terms and conditions",
+                      "link": "https://website.phonepe.com/app/category/insurance/broking/personal-accident-insurance/reliance/terms.html"
+                    }
+                  ],
+                  "description": "lorem ipsem {{terms_and_conditions}} doler amit lorem ipsem doler amit lorem ipsem ipsem doler amit",
+                  "alignment": "LEFT",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 8
+            },
+            {
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_REVIEW_BUY_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 25
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "INLINE",
+          "title": {
+            "title": "BUY PLAN"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      },
+      {
+        "sectionType": "REVIEW_AND_BUY_V2",
+        "title": {
+          "title": "Review and buy"
+        },
+        "visible": true,
+        "optional": false,
+        "terminal": true,
+        "order": 7,
+        "active": true,
+        "backPolicy": "ALLOWED",
+        "section": {
+
+          "fieldGroups": [
+            {
+
+              "title": {},
+              "dividerType": "NONE",
+              "fields": [
+                {
+                  "type": "INSURANCE_PLAN",
+
+                  "fieldDataType": "RNB_V2_PLAN_DETAILS",
+                  "editable": true,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": true,
+                  "active": true,
+                  "order": 1,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "NEW_RNB_PAGE_VEHICLE_DETAILS",
+                  "title": "Bike Details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_BACK"
+                  },
+                  "effects": [],
+                  "seenEventEnabled": false,
+                  "buttonText": "Edit",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "RNB_PAGE_V2_PERSONAL_DETAILS",
+                  "title": "Personal Details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_BACK"
+                  },
+                  "effects": [],
+                  "seenEventEnabled": false,
+                  "buttonText": "Edit",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "NEW_RNB_PAGE_PREVIOUS_POLICY_DETAILS",
+                  "title": "Previous Policy Details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_BACK"
+                  },
+                  "effects": [],
+                  "seenEventEnabled": false,
+                  "buttonText": "Edit",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "NEW_RNB_PAGE_PERSONAL_ACCIDENT_DETAILS",
+                  "title": "Nominee Details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_BACK"
+                  },
+                  "effects": [],
+                  "seenEventEnabled": false,
+                  "buttonText": "Edit",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "CARD_V2",
+              "fields": [
+                {
+                  "type": "SELECTION_INFORMATION_WITH_BUTTON",
+
+                  "fieldDataType": "RNB_PAGE_V2_ACTIVE_TP_DETAILS",
+                  "title": "Active TP policy details",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "MOVE_BACK"
+                  },
+                  "effects": [],
+                  "seenEventEnabled": false,
+                  "buttonText": "Edit",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 9
+            },
+            {
+
+              "title": {},
+              "dividerType": "STICKY",
+              "fields": [
+                {
+                  "type": "RICH_LABEL",
+
+                  "fieldDataType": "RNB_V2_TNC",
+                  "editable": false,
+                  "optional": false,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 0,
+                  "seenEventEnabled": false,
+                  "label": "",
+                  "componentKitVersion": 12
+                },
+                {
+                  "type": "RICH_CHECKBOX_WITH_MULTI_LINK",
+
+                  "fieldDataType": "MOTOR_TNC",
+                  "editable": true,
+                  "optional": true,
+                  "visible": true,
+                  "deferred": false,
+                  "active": true,
+                  "order": 3,
+                  "valueType": "BOOLEAN",
+                  "seenEventEnabled": false,
+                  "intents": [
+                    {
+                      "type": "WEB_URL",
+                      "identifier": "terms_and_conditions",
+                      "displayString": "terms and conditions",
+                      "link": "https://website.phonepe.com/app/category/insurance/broking/personal-accident-insurance/reliance/terms.html"
+                    }
+                  ],
+                  "description": "lorem ipsem {{terms_and_conditions}} doler amit lorem ipsem doler amit lorem ipsem ipsem doler amit",
+                  "alignment": "LEFT",
+                  "valueScope": "ALL",
+                  "componentKitVersion": 8
+                }
+              ],
+              "properties": {
+                "ALIGNMENT": {
+                  "type": "ALIGNMENT",
+                  "componentKitVersion": 29,
+                  "position": "BOTTOM"
+                }
+              },
+              "componentKitVersion": 29
+            },
+            {
+
+              "title": {},
+              "dividerType": "BOTTOM",
+              "fields": [
+                {
+                  "type": "INSURANCE_PRICE_DETAILS",
+
+                  "fieldDataType": "MOTOR_INSURANCE_NEW_REVIEW_AND_BUY_PRICE_DETAILS",
+                  "editable": false,
+                  "optional": false,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "valueType": "INSURANCE_PRODUCT",
+                  "seenEventEnabled": false,
+                  "componentKitVersion": 3
+                }
+              ],
+              "properties": {},
+              "componentKitVersion": 3
+            },
+            {
+
+              "title": {},
+              "dividerType": "FLOATING",
+              "fields": [
+                {
+                  "type": "ICON",
+
+                  "fieldDataType": "MOTOR_ABT_ICON",
+                  "title": "Need Help?",
+                  "editable": true,
+                  "optional": true,
+                  "visible": false,
+                  "deferred": true,
+                  "active": true,
+                  "order": 0,
+                  "action": {
+                    "type": "OPEN_FAQ",
+                    "presentationType": "FULL_SCREEN",
+                    "pageTitle": "Help",
+                    "url": "https://iris.phonepe.com/app/index.html?src=callback_car_insurance_policy#open"
+                  },
+                  "seenEventEnabled": true,
+                  "animation": {
+                    "id": "abt_phone_pulse",
+                    "expansionAnimationMaxCount": -1,
+                    "clickCountForAnimationStop": 2
+                  },
+                  "chimeraKey": "INS_MOTOR_2W_REVIEW_BUY_ABT_META",
+                  "componentKitVersion": 25
+                }
+              ],
+              "properties": {
+                "FLOATING": {
+                  "type": "FLOATING",
+                  "orientation": "HORIZONTAL",
+                  "position": "BOTTOM_RIGHT",
+                  "componentKitVersion": 23
+                }
+              },
+              "componentKitVersion": 25
+            }
+          ],
+          "componentKitVersion": 29
+        },
+        "bottomButton": {
+          "hideWhenDisabled": false,
+          "type": "INLINE",
+          "title": {
+            "title": "BUY PLAN"
+          },
+          "stickyFieldIds": [],
+          "inlineFieldIds": [],
+          "hideStickyDivider": false
+        }
+      }
+    ],
+    "componentKitVersion": 29,
+    "version": 57,
+    "providerId": "MOTOR_INSURANCE_WORKFLOW_PROVIDER",
+    "workflowType": "TWO_WHEELER_INSURANCE_PURCHASE",
+    "active": true
+  }
+}
