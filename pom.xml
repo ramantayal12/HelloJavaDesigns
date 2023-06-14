@@ -4,14 +4,30 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>groupId</groupId>
+  <groupId>com.raman.helloDesigns</groupId>
   <artifactId>HelloJavaDesigns</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
+    <!--This line specifies the version of the Java source code that you want to use in your project-->
+    <maven.compiler.source>17</maven.compiler.source>
+
+    <!--This line specifies the version of the Java bytecode that you want the compiler to generate-->
+    <maven.compiler.target>17</maven.compiler.target>
+
+    <!--
+    Java Source Code: This is the human-readable code written by developers using the Java
+    programming language. It consists of classes, methods, variables, control flow statements, and
+    other elements that define the logic and behavior of a program. Java source code files typically
+    have a ".java" extension. It is the starting point for writing and understanding a Java program.
+
+    Java Bytecode: Java source code is compiled into an intermediate representation called Java
+    bytecode. Bytecode is a low-level platform-independent binary format that is executed by the
+    Java Virtual Machine (JVM). The compilation process is performed by the Java compiler (javac),
+    which translates the source code into bytecode. Bytecode files have a ".class" extension.
+    -->
   </properties>
+
 
   <dependencies>
     <dependency>
@@ -48,6 +64,14 @@
       <artifactId>guava</artifactId>
       <version>31.0.1-jre</version>
     </dependency>
+
+    <!--Adding this to use reflections library -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.11</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -55,8 +79,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>9</source>
-          <target>9</target>
+          <source>17</source>
+          <target>17</target>
         </configuration>
       </plugin>
     </plugins>
