@@ -8,6 +8,8 @@ public class EncryptionMethods {
   public static void apacheDigestUtils(){
 
     System.out.println("Input : Raman ");
+
+    // Compute the SHA-256 hash of the input using Apache's DigestUtils
     System.out.println( (DigestUtils.sha256Hex("Raman")));
 
     System.out.println("Printing if using same input gives us same output");
@@ -20,6 +22,8 @@ public class EncryptionMethods {
   }
 
   public static void googleGuavaHashing(){
+
+    // Generate SHA-256 hash of the string "Raman" using UTF-8 encoding
     String sha256hex = Hashing.sha256()
         .hashString("Raman", StandardCharsets.UTF_8)
         .toString();
