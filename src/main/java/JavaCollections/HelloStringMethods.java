@@ -1,4 +1,4 @@
-package StringMethods;
+package JavaCollections;
 
 import java.util.StringJoiner;
 
