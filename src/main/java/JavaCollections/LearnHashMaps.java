@@ -1,25 +1,13 @@
 package JavaCollections;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
-@AllArgsConstructor
-class Product{
-
-    private String name;
-    private String description;
-
-}
-
-public class OverHashMaps {
+public class LearnHashMaps {
 
     private final Map<String,String> productMap;
 
-    public OverHashMaps() {
+    public LearnHashMaps() {
         this.productMap = new HashMap<> ();
     }
 

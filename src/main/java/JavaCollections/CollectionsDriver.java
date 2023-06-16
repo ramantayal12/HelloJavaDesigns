@@ -8,7 +8,7 @@ public class CollectionsDriver {
 
         // hashMaps
         System.out.println ("hashMaps");
-        OverHashMaps hashMapsBasics = new OverHashMaps ();
+        LearnHashMaps hashMapsBasics = new LearnHashMaps ();
         hashMapsBasics.putMethod ();
         hashMapsBasics.getMethod ();
         hashMapsBasics.iterateMethod ();
@@ -16,9 +16,9 @@ public class CollectionsDriver {
 
         // ArrayList
         System.out.println ("ArrayList");
-        ArrayListOverView arrayListOverView = new ArrayListOverView ();
-        ArrayList<Integer> arrayList = arrayListOverView.initializeMethods ();
-        arrayListOverView.manipulatingArrayList (arrayList);
+        LearnArrayListMethods learnArrayListMethods = new LearnArrayListMethods ();
+        ArrayList<Integer> arrayList = learnArrayListMethods.initializeMethods ();
+        learnArrayListMethods.manipulatingArrayList (arrayList);
 
     }
 }

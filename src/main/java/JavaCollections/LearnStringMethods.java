@@ -2,7 +2,7 @@ package JavaCollections;
 
 import java.util.StringJoiner;
 
-public class HelloStringMethods {
+public class LearnStringMethods {
 
   public static String learnStringJoiner(String s1, String s2){
 
