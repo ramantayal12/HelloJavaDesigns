@@ -1,4 +1,4 @@
-package BuilderPattern;
+package DesignPatterns.BuilderPattern;
 
 public class BuilderPatternDriver {
 

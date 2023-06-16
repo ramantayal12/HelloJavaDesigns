@@ -1,4 +1,4 @@
-package SingletonPattern;
+package DesignPatterns.SingletonPattern;
 
 class SingletonEagerImplementation{
 

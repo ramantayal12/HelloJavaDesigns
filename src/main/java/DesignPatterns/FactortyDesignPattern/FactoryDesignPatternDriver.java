@@ -1,4 +1,4 @@
-package FactortyDesignPattern;
+package DesignPatterns.FactortyDesignPattern;
 
 class Triangle implements Polygon {
 
