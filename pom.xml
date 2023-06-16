@@ -30,23 +30,29 @@
 
 
   <dependencies>
+
+    <!-- Dependency for Lombok library -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.24</version>
     </dependency>
+
+    <!-- Dependency for RabbitMQ AMQP client -->
     <dependency>
       <groupId>com.rabbitmq</groupId>
       <artifactId>amqp-client</artifactId>
       <version>5.14.2</version>
     </dependency>
+
+    <!-- Dependency for Joda-Time library -->
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
       <version>2.12.0</version>
     </dependency>
 
-    <!--Adding this for test cases -->
+    <!-- Adding JUnit Jupiter for test cases -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -54,7 +60,8 @@
       <scope>test</scope>
     </dependency>
 
-    <!--Adding these libraries for secure hashing -->
+    <!-- Adding Commons Codec for secure hashing -->
+    <!--Apache DigitUtils is inherited from this dependency-->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
@@ -73,9 +80,18 @@
       <version>0.9.11</version>
     </dependency>
 
+    <!-- Adding Caffeine library for high-performance caching -->
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>2.5.5</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
+
+      <!-- Maven Compiler Plugin configuration -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -84,6 +100,8 @@
           <target>17</target>
         </configuration>
       </plugin>
+
+
     </plugins>
   </build>
 
