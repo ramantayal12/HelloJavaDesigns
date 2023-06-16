@@ -12,9 +12,11 @@ public class EncryptionMethods {
     // Compute the SHA-256 hash of the input using Apache's DigestUtils
     System.out.println( (DigestUtils.sha256Hex("Raman")));
 
+    // Hashing of same input should give same output
     System.out.println("Printing if using same input gives us same output");
     System.out.println(DigestUtils.sha256Hex("tayal").equals(DigestUtils.sha256Hex("tayal"))) ;
 
+    // hashing using 3rd level, most secure hashing
     String sha256Hex_sha3 = new DigestUtils("SHA3-256").digestAsHex("Raman");
     System.out.println("Hashing using sha3");
     System.out.println(sha256Hex_sha3);
@@ -32,6 +34,8 @@ public class EncryptionMethods {
         .toString();
     System.out.println("Hashing using google guava ");
     System.out.println(sha256hex);
+
+    // Hashing of same input should give same output
     System.out.println(sha256hex.equals(sha256hex2));
 
   }
