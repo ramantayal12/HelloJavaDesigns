@@ -1,8 +1,6 @@
 package EnumClass;
 
-import lombok.Data;
-
-public enum DaysOfWeek {
+public enum DaysOfWeekEnum {
   SUNDAY("off"),
   MONDAY("working"),
   TUESDAY("working"),
@@ -16,7 +14,7 @@ public enum DaysOfWeek {
   }
 
   private String dayOfWeek;
-  DaysOfWeek(String dayOfWeek) {
+  DaysOfWeekEnum(String dayOfWeek) {
     this.dayOfWeek = dayOfWeek;
   }
 }
