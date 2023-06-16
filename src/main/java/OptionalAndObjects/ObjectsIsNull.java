@@ -1,4 +1,4 @@
-package OptionalClass;
+package OptionalAndObjects;
 
 import java.util.Objects;
 
