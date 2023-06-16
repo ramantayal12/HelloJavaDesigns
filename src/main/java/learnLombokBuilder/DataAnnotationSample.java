@@ -9,24 +9,10 @@ import lombok.Data;
  * The generated methods ensure encapsulation and provide easy access to the class properties.
  */
 @Data
-class Message{
+class DataAnnotationSample {
 
-  private String sender;
-  private int messageLength;
-  private Boolean isImportant;
-
-}
-
-
-public class MessageDataAnnotation {
-
-  public static void main(String[] args ){
-
-    Message message = new Message();
-    message.setSender("MySelf");
-    message.setMessageLength(10);
-    message.setIsImportant(true);
-
-  }
+    private String sender;
+    private int messageLength;
+    private Boolean isImportant;
 
 }

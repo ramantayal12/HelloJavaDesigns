@@ -11,7 +11,7 @@ import lombok.Singular;
 @Getter
 @Setter
 @Builder
-public class Person {
+public class BuilderAnnotationSample {
   @Setter(AccessLevel.PROTECTED) private String givenName;
   private String additionalName;
   private String familyName;
