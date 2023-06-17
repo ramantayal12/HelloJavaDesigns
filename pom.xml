@@ -16,8 +16,13 @@
   <!--The <modelVersion> element specifies the version of the Maven POM model being used.-->
   <modelVersion>4.0.0</modelVersion>
 
+  <!--The <groupId> element identifies the group or organization that is responsible for the project.-->
   <groupId>com.raman.helloDesigns</groupId>
+
+  <!--The <artifactId> element specifies the unique identifier for the project's artifact or module. It represents the name of the project.-->
   <artifactId>HelloJavaDesigns</artifactId>
+
+  <!--The <version> element indicates the version of the project's artifact or module.-->
   <version>1.0-SNAPSHOT</version>
 
   <properties>
