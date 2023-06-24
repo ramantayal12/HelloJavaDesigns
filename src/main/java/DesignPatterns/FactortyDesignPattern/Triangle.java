@@ -1,9 +1,9 @@
 package DesignPatterns.FactortyDesignPattern;
 
-class Triangle implements Polygon {
+public class Triangle implements Polygon {
 
     @Override
     public String getType() {
-        return "It is a FactortyDesignPattern.Triangle";
+        return "It is a Triangle";
     }
 }

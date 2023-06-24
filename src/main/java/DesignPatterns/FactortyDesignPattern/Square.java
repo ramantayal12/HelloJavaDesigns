@@ -1,9 +1,9 @@
 package DesignPatterns.FactortyDesignPattern;
 
-class Square implements Polygon {
+public class Square implements Polygon {
 
     @Override
     public String getType() {
-        return "It is a FactortyDesignPattern.Square";
+        return "It is a Square";
     }
 }
