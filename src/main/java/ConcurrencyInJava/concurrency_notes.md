@@ -1,0 +1,47 @@
+# java concurrency
+
+- definition : multiple things happening at same time 
+- threads : code blocks that can be executed in separate paths.
+- threads can be used to improve the responsiveness of programs in java 
+- process vs thread 
+  - process : instance of a running program 
+    - isolated 
+      - private memory space
+      - data is not shared
+  - thread : semi-process or subprocess
+    - executes a given piece of code 
+    - can run concurrently with other threads
+    - share data and memory 
+  - example : 
+    - process : product search 
+    - threads : a. query database b. manage user interface
+- multithreading : switching between threads 
+  - better cpu and i/o utilisation 
+  - long tasks can run in a thread 
+- main thread : special thread created by JVM
+- Thread.class encapsulated the attributes and behaviour of Java thread.
+  - Thread.class has a static method named currentThread
+  - this method returns reference to the current running thread.
+- threads run in parallel with the main thread
+- Daemon vs Non-Daemon Threads 
+  - Daemon 
+    - infrastructure thread
+    - runs in background 
+    - garbage collection
+  - Non-Daemon 
+    - non-infra structure thread
+    - performs program tasks 
+    - main Thread is also a non daemon thread
+  - JVM treats differently daemon and non daemon threads 
+    - daemon threads have low priority than non-daemon threads
+    - JVM waits to stop itself before all non-daemon threads to finish
+    - JVM terminates the daemon threads 
+- any newly created thread inherits its status of daemon/no-daemon from its parent thread
+
+- Java Thread is an object like any other Java object.
+  - Thread represents a separate path of execution 
+  - running behaviour of thread is represented by Runnable interface
+- An instance of the Thread class or its sub class represents a separate path of execution. The Runnable interface represents the running behaviour of a thread.
+- thread communication 
+  - join() method 
+    - blocking method 
