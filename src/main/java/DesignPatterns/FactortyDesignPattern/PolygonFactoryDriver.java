@@ -8,7 +8,7 @@ package DesignPatterns.FactortyDesignPattern;
  * types need to be added in the future.
  */
 public class PolygonFactoryDriver {
-    public Polygon getPolygon(int numberOfSides) {
+    public static Polygon getPolygon(int numberOfSides) {
 
         if (numberOfSides == 3) {
             return new Triangle ();
