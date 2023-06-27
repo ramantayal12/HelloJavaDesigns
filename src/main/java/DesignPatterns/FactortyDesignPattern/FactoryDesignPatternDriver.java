@@ -10,8 +10,8 @@ public class FactoryDesignPatternDriver {
     public static void main(String[] args ){
 
         for(int i=3; i<=5; i++){
-            Polygon polygon = PolygonFactoryDriver.getPolygon (i);
-            System.out.println (polygon.getType());
+            PolygonFactory polygonFactory = new PolygonFactory ();
+            System.out.println(polygonFactory.getPolygon(i).getPolygonType());
         }
 
     }

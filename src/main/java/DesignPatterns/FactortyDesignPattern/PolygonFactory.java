@@ -7,8 +7,8 @@ package DesignPatterns.FactortyDesignPattern;
  * polygon to create based on the input. This approach allows for easy extensibility if new polygon
  * types need to be added in the future.
  */
-public class PolygonFactoryDriver {
-    public static Polygon getPolygon(int numberOfSides) {
+public class PolygonFactory {
+    public Polygon getPolygon(int numberOfSides) {
 
         if (numberOfSides == 3) {
             return new Triangle ();
