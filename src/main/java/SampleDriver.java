@@ -1,4 +1,4 @@
-import static LearnReflections.ReflectionsImplementation.getReflections;
+import static JavaReflections.ReflectionsImplementation.getReflections;
 
 public class SampleDriver {
 
