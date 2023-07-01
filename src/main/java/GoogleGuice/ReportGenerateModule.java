@@ -9,7 +9,7 @@ public class ReportGenerateModule extends AbstractModule {
     protected void configure() {
         bind (ReportGenerator.class).to(CSVGenerator.class);
 
-        // cant do this as this will lead to multiple bindings to same class
+        // can't do this as this will lead to multiple bindings to same class
             /*bind (ReportGenerator.class).to (XMLGenerator.class);*/
         // so we use @Named annotation to bind same class to multiple implementations
 
