@@ -106,6 +106,13 @@
       <version>2.5.5</version>
     </dependency>
 
+    <!--Google Guice Library for Dependency Injection-->
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>5.1.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
