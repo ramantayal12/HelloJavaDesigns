@@ -3,7 +3,7 @@ package GoogleGuice;
 public class CSVGenerator implements ReportGenerator{
 
     @Override
-    public String wgenerate() {
+    public String generate() {
         return "CSV Report";
     }
 
