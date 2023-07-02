@@ -9,7 +9,7 @@ import lombok.Data;
 @JsonTypeName("dog")
 public class Dog extends Animal {
 
-  public String dogType;
+  String dogType;
   String dogName;
 
 }
