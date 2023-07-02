@@ -78,7 +78,7 @@
     </dependency>
 
     <!-- Adding Commons Codec for secure hashing -->
-    <!--Apache DigitUtils is inherited from this dependency-->
+    <!-- Apache DigitUtils is inherited from this dependency -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
@@ -111,6 +111,21 @@
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
       <version>5.1.0</version>
+    </dependency>
+
+    <!--Dependency for Jackson-Sub-Types Json Annotations-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.15.2</version>
+    </dependency>
+
+    <!-- Object Mapper of Jackson -->
+    <!-- Data format extension for Jackson to offer alternative support for serializing POJOs as XML and deserializing XML as pojos.-->
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
+      <version>2.15.2</version>
     </dependency>
 
   </dependencies>
