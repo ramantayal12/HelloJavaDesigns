@@ -1,5 +1,6 @@
 package JacksonAnnotations;
 
+import JacksonAnnotations.JsonSubTypes.Animal;
 import JacksonAnnotations.JsonSubTypes.Cat;
 import JacksonAnnotations.JsonSubTypes.Dog;
 import JacksonAnnotations.JsonSubTypes.Zoo;
@@ -32,25 +33,15 @@ public class Driver {
 
   public static void main(String[] args ) throws JsonProcessingException {
 
-    Dog dog = Dog.builder()
-        .dogType("labrador")
-        .dogName("mack")
-        .build();
-    Zoo zoo = Zoo.builder()
-        .animal(dog)
-        .build();
+    ObjectMapper objectMapper = new ObjectMapper ();
 
-    System.out.println(new ObjectMapper().writeValueAsString(zoo));
+    String catDeserialize = "{\"animal\":{\"name\":\"cat\",\"catName\":\"lacy\",\"catType\":\"lazy\"}}";
+    String dogDeserialize = "{\"animal\":{\"name\":\"dog\",\"dogType\":\"labrador\",\"dogName\":\"mack\"}}";
+    Zoo deserializedZoo = objectMapper.readerFor (Zoo.class).readValue (catDeserialize);
+    Zoo deserializedDog = objectMapper.readerFor (Zoo.class).readValue (dogDeserialize);
+    System.out.println (deserializedZoo);
+    System.out.println (deserializedDog);
 
-    Cat cat = Cat.builder()
-        .catName("lacy")
-        .catType("lazy")
-        .build();
-    Zoo zoo1 = Zoo.builder()
-        .animal(cat)
-        .build();
-
-    System.out.println(new ObjectMapper().writeValueAsString(zoo1));
   }
 
 }
