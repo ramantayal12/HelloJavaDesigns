@@ -2,13 +2,21 @@ package CoreJava.JavaCollections;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class LearnHashMaps {
 
     private final Map<String,String> productMap;
 
+    /*
+     * ConcurrentHashMap is a thread-safe implementation of the Map interface in Java, which means multiple threads can access it simultaneously without any synchronization issues.
+     * One of the key features of the ConcurrentHashMap is that it provides fine-grained locking, meaning that it locks only the portion of the map being modified, rather than the entire map. This makes it highly scalable and efficient for concurrent operations.
+     */
+    private final ConcurrentHashMap<String, Integer> concurrentHashMap;
+
     public LearnHashMaps() {
         this.productMap = new HashMap<> ();
+        this.concurrentHashMap = new ConcurrentHashMap<>();
     }
 
     public void putMethod(){
