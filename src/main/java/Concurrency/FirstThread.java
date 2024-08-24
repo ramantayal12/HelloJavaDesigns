@@ -1,4 +1,4 @@
-package CoreJava.ConcurrencyInJava;
+package Concurrency;
 
 public class FirstThread extends Thread{
 

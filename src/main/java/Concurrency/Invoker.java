@@ -1,4 +1,4 @@
-package CoreJava.ConcurrencyInJava;
+package Concurrency;
 
 public class Invoker {
 
@@ -27,6 +27,7 @@ public class Invoker {
     // another way of implementing a thread
     MyRunnable myRunnable = new MyRunnable();
     Thread runnableThread = new Thread(myRunnable);
+    runnableThread.start();
 
     // sleep() method in a thread
     // direct use is on main() thread

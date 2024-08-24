@@ -14,5 +14,5 @@ package LombokAnnotations;
   getters are also created by default for public variables'
   person.name()
  */
-record StudentJavaRecordSample(String name, String address) {
+public record StudentJavaRecordSample(String name, String address) {
 }
