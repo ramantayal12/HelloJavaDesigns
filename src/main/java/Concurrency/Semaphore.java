@@ -1,10 +1,10 @@
 package Concurrency;
 
-public class MySemaphore {
+public class Semaphore {
 
   private int permits;
 
-  public MySemaphore(int permits) {
+  public Semaphore(int permits) {
     this.permits = permits;
   }
 
@@ -27,7 +27,7 @@ public class MySemaphore {
 
   public static void main(String[] args){
 
-    MySemaphore semaphore = new MySemaphore(3);
+    Semaphore semaphore = new Semaphore(3);
     Runnable runnable = () -> {
       try{
         semaphore.acquire();

@@ -1,6 +1,6 @@
 package Concurrency;
 
-public class MyMutex {
+public class Mutex {
 
   private boolean isLocked;
 
@@ -30,7 +30,7 @@ public class MyMutex {
 
   // driver method
   public static void main(String[] args) {
-    MyMutex mutex = new MyMutex();
+    Mutex mutex = new Mutex();
 
     // Task to be executed by multiple threads
     Runnable task = () -> {
