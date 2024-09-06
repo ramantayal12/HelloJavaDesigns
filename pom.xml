@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!--This line specifies the XML version and encoding used in the file-->
+<!--This line specifies the XML version and encoding used in the file-->
 
-  <!--
-  The <project> element is the root element of the pom.xml file.
-  It defines the project configuration and dependencies.
-  The xmlns attribute sets the default XML namespace for elements in the file,
-  pointing to the Maven POM schema. The xmlns:xsi attribute defines another namespace for the XML Schema Instance.
-  The xsi:schemaLocation attribute specifies the location of the XML schema file that describes the structure
-  and constraints of the Maven POM.
-  -->
+<!--
+The <project> element is the root element of the pom.xml file.
+It defines the project configuration and dependencies.
+The xmlns attribute sets the default XML namespace for elements in the file,
+pointing to the Maven POM schema. The xmlns:xsi attribute defines another namespace for the XML Schema Instance.
+The xsi:schemaLocation attribute specifies the location of the XML schema file that describes the structure
+and constraints of the Maven POM.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
