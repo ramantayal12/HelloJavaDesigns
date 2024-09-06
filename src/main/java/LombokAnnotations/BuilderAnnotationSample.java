@@ -2,6 +2,7 @@ package LombokAnnotations;
 
 import java.util.List;
 import lombok.AccessLevel;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Builder;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Singular;
 
 @Getter
 @Setter
+@Data // combination of @Getter & @Setter
 @Builder
 public class BuilderAnnotationSample {
   @Setter(AccessLevel.PROTECTED) private String givenName;

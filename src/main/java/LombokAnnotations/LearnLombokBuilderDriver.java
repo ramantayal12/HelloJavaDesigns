@@ -16,12 +16,6 @@ public class LearnLombokBuilderDriver {
     builderAnnotationSample.setAge(12);
     builderAnnotationSample.setGivenName("Raman2");
 
-
-    DataAnnotationSample dataAnnotationSample = new DataAnnotationSample ();
-    dataAnnotationSample.setSender("MySelf");
-    dataAnnotationSample.setMessageLength(10);
-    dataAnnotationSample.setIsImportant(true);
-
   }
 
 }
