@@ -1,4 +1,4 @@
-package CoreJava.EnumClass;
+package CoreJava.Enums;
 
 import java.util.stream.Stream;
 

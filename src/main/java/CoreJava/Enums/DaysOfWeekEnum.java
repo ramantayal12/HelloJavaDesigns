@@ -1,4 +1,4 @@
-package CoreJava.EnumClass;
+package CoreJava.Enums;
 
 public enum DaysOfWeekEnum {
   SUNDAY("off"),
