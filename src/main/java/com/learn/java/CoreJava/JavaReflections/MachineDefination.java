@@ -1,4 +1,4 @@
-package com.learn.java.JavaReflections;
+package com.learn.java.CoreJava.JavaReflections;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

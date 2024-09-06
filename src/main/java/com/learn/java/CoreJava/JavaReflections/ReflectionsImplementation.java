@@ -1,4 +1,4 @@
-package com.learn.java.JavaReflections;
+package com.learn.java.CoreJava.JavaReflections;
 
 
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import org.reflections.Reflections;
 public class ReflectionsImplementation {
 
   // Define the package name to be used in reflections
-  public static final String PACKAGE_NAMES = "com/learn/java/JavaReflections";
+  public static final String PACKAGE_NAMES = "com/learn/java/CoreJava/JavaReflections";
 
   public static void getReflections() {
 
