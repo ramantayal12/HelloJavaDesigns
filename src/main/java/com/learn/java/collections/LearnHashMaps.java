@@ -1,21 +1,32 @@
-package com.learn.java.core.java.collections;
+package com.learn.java.collections;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * used as object in LearnHashMaps class
  */
-@Data
-@AllArgsConstructor
 class Product {
 
   private String name;
   private String description;
 
+  public String getName() {
+    return name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public Product(String name, String description) {
+    this.name = name;
+    this.description = description;
+  }
 }
 
 public class LearnHashMaps {

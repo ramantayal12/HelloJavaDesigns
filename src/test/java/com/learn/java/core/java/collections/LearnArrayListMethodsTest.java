@@ -1,7 +1,6 @@
 package com.learn.java.core.java.collections;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import com.learn.java.collections.LearnArrayListMethods;
 import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
