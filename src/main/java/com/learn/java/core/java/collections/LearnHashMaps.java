@@ -3,6 +3,20 @@ package com.learn.java.core.java.collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+/**
+ * used as object in LearnHashMaps class
+ */
+@Data
+@AllArgsConstructor
+class Product {
+
+  private String name;
+  private String description;
+
+}
 
 public class LearnHashMaps {
 

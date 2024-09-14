@@ -24,8 +24,10 @@ public class LearnArrayListMethods {
   public void manipulatingArrayList(ArrayList<Integer> arrayList) {
 
     // Adding elements
+    arrayList.add(28);
     arrayList.add(20);
     arrayList.add(24);
+
 
     // Removing elements using index
     arrayList.remove(0);
@@ -33,12 +35,19 @@ public class LearnArrayListMethods {
     // manipulation using collection framework
     Collections.reverse(arrayList);
 
-    // Iterating in arrayList using lambda
-    arrayList.forEach((element) -> {
-      System.out.print(element);
-      element += 2;
-      System.out.println(element);
-    });
+    // sorting an arrayList
+    Collections.sort(arrayList);
+
+    // iterating arrayList using for loop
+    for(int i=0; i<arrayList.size(); i++){
+
+      Integer x = arrayList.get(i);
+
+      // change the element value at index i
+      arrayList.set(i, x+2);
+
+      System.out.println(arrayList.get(i));
+    }
 
   }
 }
